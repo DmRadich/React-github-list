@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Result from './Result'
-import axios from 'axios';
+import axios from 'axios'
+import { Alert } from '@mui/material';
 
 
 const Search = () => {
@@ -11,6 +12,7 @@ const Search = () => {
     const [val, setVal] = useState('');
     const [sortField, setSortField] = useState('login');
     const [sortDirection, setSortDirection] = useState('asc');
+    const [error, setError] = useState(false);
 
     const handleClick = () => {
         let val = document.getElementById('myInput').value;
@@ -29,7 +31,7 @@ const Search = () => {
                     setData(response.data.items);
                 })
                 .catch((response) => {
-                    alert('error');
+                    setError(true);
                 });
         }
     }, [page, sortField, sortDirection]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -68,6 +70,13 @@ const Search = () => {
 
     return (
         <div>
+            {
+                error
+                    ?
+                <Alert severity="error">Error, pleas reload the page</Alert>
+                    :
+                null
+            }
             <div className="app" key={data.id}>
                 <div className="login">
                         <h1 className="text-primary">Login</h1>
