@@ -1,11 +1,11 @@
 import React from 'react';
-import Search from './components/Search';
-import './styles/app.css'
+import MainContainer from './components/MainContainer';
+import './styles/app.css';
 
 function App() {
   return (
     <div className="App">
-        <Search/>
+        <MainContainer />
     </div>
   );
 }

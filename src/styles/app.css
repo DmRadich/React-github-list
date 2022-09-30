@@ -68,6 +68,18 @@ input {
     transition: all 0.1s ease-in-out;
 }
 
+.CircularProgress {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+
+.MuiPagination {
+    display: flex;
+    justify-content: center;
+}
+
 .pagination {
     display: flex;
     justify-content: space-around;

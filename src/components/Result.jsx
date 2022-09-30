@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Result = (props) => {
-    console.log(props)
     return (
         <div>
             <div>
@@ -16,7 +15,7 @@ const Result = (props) => {
                     </thead>
                 <tbody>{props.items.map((item) => {
                     return(
-                        <tr>
+                        <tr key={item.id}>
                             <td>{item.avatar_url}</td>
                             <td>{item.login}</td>
                             <td>{item.type}</td>
