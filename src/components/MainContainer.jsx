@@ -22,6 +22,10 @@ const MainContainer = () => {
             });
     }
 
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+    }
+
     useEffect(() => {
         if (data.length !== 0) {
             fetchGithubAccount(inputValue)
@@ -54,17 +58,13 @@ const MainContainer = () => {
         if (target === 'direction') {
             setSortDirection(e.target.value);
         }
-
         if (target === 'field') {
             setSortField(e.target.value);
         }
     }
 
-
-
   return (
     <div>
-        
             <Search 
                 error={error}
                 handleClick={handleClick}
@@ -79,6 +79,7 @@ const MainContainer = () => {
                 data={data}
                 setPage={setPage}
                 perPage={perPage}
+                onFormSubmit={onFormSubmit}
             />
     </div>
   )

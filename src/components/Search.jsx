@@ -5,7 +5,6 @@ import Pagination from '@mui/material/Pagination';
 import CircularProgress from '@mui/material/CircularProgress';
 
 const Search = (props) => {
-
     return (
         <div>
             <div className='app'>
@@ -18,8 +17,10 @@ const Search = (props) => {
                 }
                 <div className="login">
                     <h1 className="text-primary">Login</h1>
-                        <input onChange={(e) => props.setInputValue(e.target.value)} id="myInput" value={props.nputValue} className="auth" placeholder='Enter login' />
-                        <button  onClick={props.handleClick} className="btn_sumbit" >Submit</button>
+                        <form onSubmit={props.onFormSubmit}>
+                            <input onChange={(e) => props.setInputValue(e.target.value)} id="myInput" value={props.nputValue} className="auth" placeholder='Enter login' />
+                            <button type="submit" onClick={props.handleClick} className="btn_sumbit" >Submit</button>
+                        </form>
                             <div className="filters">
                                 <h3>Sorting for field:
                                     <select id='field' className="field" onChange={props.makeFilter.bind(this)}>
